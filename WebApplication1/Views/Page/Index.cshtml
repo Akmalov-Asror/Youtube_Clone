@@ -1,0 +1,23 @@
+﻿@model List<WebApplication1.Models.Video>
+@{
+    ViewData["Title"] = "Page";
+}
+
+
+@foreach (var video in Model)
+{
+    var videoUrl = video.Url.Replace("https://youtu.be/", "https://www.youtube.com/embed/");
+ 
+    <div class="d-flex justify-content-center mb-5">
+        <iframe width="640" height="315" 
+            src="@videoUrl" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div>
+        <h6 > Video Auther: @video.Name </h6>
+    </div>
+}
+
